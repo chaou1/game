@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ground
   - death
+  - coin
+  - goal
   layers:
   - Default
   - TransparentFX
