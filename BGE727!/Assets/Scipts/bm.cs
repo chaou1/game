@@ -6,7 +6,7 @@ public class bm : MonoBehaviour
 {
 
 
-
+    public int coincounter;
 public float movementspeed;
 public float jumpstrength;
 public bool isGrounded = false;
@@ -26,11 +26,11 @@ GameObject Player;
     // Update is called once per frame
     void Update()
     {
-          Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
+        Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
         transform.position = transform.position + horizontal * Time.deltaTime * movementspeed;
-                        Jump();
+        Jump();
     }
-            
+
 
     
      void Jump()
@@ -47,6 +47,15 @@ GameObject Player;
 
 
         }
-     
-    
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("death")) {
+
+            FindObjectOfType<Gamemanager>().endGame();
+        
+        }
+    }
+
+
+
 }
