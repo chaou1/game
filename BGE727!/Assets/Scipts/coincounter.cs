@@ -25,6 +25,9 @@ public class coincounter : MonoBehaviour
 
             value = value + 1;
             Player.GetComponent<bm>().coins = value;
+            Destroy(other.gameObject);
+            Debug.Log("Münze aufgesmammelt");
+
         }
     }
 
