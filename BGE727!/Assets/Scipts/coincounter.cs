@@ -6,6 +6,7 @@ public class coincounter : MonoBehaviour
 {
 
     public GameObject Player;
+    public int value;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +21,10 @@ public class coincounter : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("coin")) { 
-        
-        
-        Player.GetComponent<bm>().coincounter= coincounter+ 1
+        if (other.CompareTag("coin")) {
+
+            value = value + 1;
+            Player.GetComponent<bm>().coins = value;
         }
     }
 
