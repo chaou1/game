@@ -28,8 +28,9 @@ GameObject Player;
     {
           Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
         transform.position = transform.position + horizontal * Time.deltaTime * movementspeed;
+                        Jump();
     }
-
+            
 
     
      void Jump()
@@ -42,7 +43,8 @@ GameObject Player;
 
              
             }
-            Jump();
+
+
 
         }
 }
