@@ -29,4 +29,5 @@ public class gc : MonoBehaviour
         if (collision.collider.tag == "ground") { Player.GetComponent<bm>().isGrounded = false; }
 
     }
+    
 }
