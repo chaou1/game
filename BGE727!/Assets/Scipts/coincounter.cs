@@ -27,7 +27,7 @@ public class coincounter : MonoBehaviour
             Player.GetComponent<bm>().coins = value;
             Destroy(other.gameObject);
             Debug.Log("Münze aufgesmammelt");
-
+            uicoin.instance.changescore(value);
         }
     }
 

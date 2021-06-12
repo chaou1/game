@@ -28,7 +28,7 @@ public class uicoin : MonoBehaviour
     }
     public void changescore(int coins) {
 
-        
+
         text.text = "X" + coins;
     }
         
