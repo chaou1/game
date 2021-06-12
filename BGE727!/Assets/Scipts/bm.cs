@@ -6,7 +6,7 @@ public class bm : MonoBehaviour
 {
 
 
-    public int coincounter;
+    public int coins;
 public float movementspeed;
 public float jumpstrength;
 public bool isGrounded = false;
