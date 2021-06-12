@@ -7,10 +7,10 @@ public class bm : MonoBehaviour
 
 
     public int coins;
-public float movementspeed;
-public float jumpstrength;
-public bool isGrounded = false;
-GameObject Player;
+    public float movementspeed;
+    public float jumpstrength;
+    public bool isGrounded = false;
+    GameObject Player;
 
 
 
@@ -20,7 +20,7 @@ GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -32,30 +32,37 @@ GameObject Player;
     }
 
 
-    
-     void Jump()
+
+    void Jump()
+    {
+        if (Input.GetButton("Jump") && isGrounded == true
+               )
         {
-            if (Input.GetButton("Jump") && isGrounded == true
-                   )
-            {
-               
-                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpstrength), ForceMode2D.Impulse);
 
-             
-            }
-
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpstrength), ForceMode2D.Impulse);
 
 
         }
+
+
+
+    }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.CompareTag("death")) {
+        if (other.collider.CompareTag("death"))
+        {
 
             FindObjectOfType<Gamemanager>().endGame();
-        
+
         }
+        if (other.collider.CompareTag("goal"))
+        {
+
+            FindObjectOfType<Gamemanager>().NextScene();
+
+        }
+
+
+
     }
-
-
-
 }
