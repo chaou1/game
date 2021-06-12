@@ -726,7 +726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coins: 0
   movementspeed: 10
-  jumpstrength: 5
+  jumpstrength: 10
   isGrounded: 0
 --- !u!1 &268441488
 GameObject:
