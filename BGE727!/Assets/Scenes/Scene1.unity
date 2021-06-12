@@ -134,11 +134,12 @@ GameObject:
   - component: {fileID: 242584987}
   - component: {fileID: 242584986}
   - component: {fileID: 242584985}
+  - component: {fileID: 242584989}
   - component: {fileID: 242584984}
   - component: {fileID: 242584988}
   m_Layer: 0
-  m_Name: Circle
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,7 +250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242584983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.9, y: 33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -267,7 +268,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8425fb9ed8ea041982177deb512c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementspeed: 0
+  movementspeed: 10
+  jumpstrength: 5
+  isGrounded: 0
+--- !u!114 &242584989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242584983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e39c0e58e98c6469ad248207b45bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 242584983}
 --- !u!1 &460465165
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +380,7 @@ GameObject:
   - component: {fileID: 1340896977}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
