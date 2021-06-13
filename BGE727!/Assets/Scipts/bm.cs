@@ -10,7 +10,7 @@ public class bm : MonoBehaviour
     public int coins;
     public float movementspeed;
     public float jumpstrength;
-
+   
     public bool isGrounded = false;
     GameObject Player;
  
