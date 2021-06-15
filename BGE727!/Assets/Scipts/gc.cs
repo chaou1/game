@@ -16,17 +16,17 @@ public class gc : MonoBehaviour
     {
 
     }
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.collider.CompareTag("ground")) { Player.GetComponent<bm>().isGrounded = true; };
+        if (other.CompareTag("ground")) { Player.GetComponent<bm>().isGrounded = true; };
 
     }
 
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.collider.tag == "ground") { Player.GetComponent<bm>().isGrounded = false; }
+        if (collision.tag == "ground") { Player.GetComponent<bm>().isGrounded = false; }
 
     }
     
