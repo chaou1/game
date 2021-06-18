@@ -15,7 +15,7 @@ public class Bob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Playerthere = true && Input.GetButton("Interact")) {
+        if (Playerthere = true && Input.GetButton("interact")) {
 
             FindObjectOfType<dialogmanager>().bobstextE();
         }

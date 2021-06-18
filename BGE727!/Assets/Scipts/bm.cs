@@ -6,12 +6,13 @@ using UnityEngine;
 public class bm : MonoBehaviour
 {
 
-
+    public CharacterController2D controller;
     public int coins;
-    public float movementspeed;
-    public float jumpstrength;
-   
-    public bool isGrounded = false;
+    public float runspeed = 40f;
+    public float horizontalmove = 0f;
+    public bool jump = false;
+    public Animator animator;
+
     GameObject Player;
  
 
@@ -29,24 +30,25 @@ public class bm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
-        transform.position = transform.position + horizontal * Time.deltaTime * movementspeed;
-        Jump();
+        horizontalmove = Input.GetAxisRaw("Horizontal")* runspeed;
+        if (Input.GetButtonDown("Jump")) 
+        
+        {
+
+            jump = true;
+       
+        
+        }
+        animator.SetFloat("Speed",Mathf.Abs(horizontalmove));
+    }
+    void FixedUpdate()
+    {
+        controller.Move(horizontalmove * Time.fixedDeltaTime,false,jump);
+        jump = false;
     }
 
 
-
-    void Jump()
-    {
-        if (Input.GetButton("Jump") && isGrounded == true)
-        {
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpstrength), ForceMode2D.Impulse);
-
-
-
-        }
-
-        }
+        
     
 private void OnCollisionEnter2D(Collision2D other)
 {
