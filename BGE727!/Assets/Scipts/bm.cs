@@ -11,6 +11,7 @@ public class bm : MonoBehaviour
     public float runspeed = 40f;
     public float horizontalmove = 0f;
     public bool jump = false;
+    public bool sprint = false;
     public Animator animator;
 
     GameObject Player;
@@ -29,7 +30,31 @@ public class bm : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {if (
+      Input.GetAxisRaw("sprint") > 0
+            ) 
+        {
+
+            runspeed = 70f;
+        
+        
+        
+        }
+        if (
+          Input.GetAxisRaw("sprint") == 0
+                )
+        {
+
+            runspeed = 40;
+
+
+
+        }
+
+
+
+
+
         horizontalmove = Input.GetAxisRaw("Horizontal")* runspeed;
         if (Input.GetButtonDown("Jump")) 
         
