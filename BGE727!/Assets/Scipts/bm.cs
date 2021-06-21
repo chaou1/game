@@ -13,6 +13,7 @@ public class bm : MonoBehaviour
     public bool jump = false;
     public bool sprint = false;
     public Animator animator;
+    public GameObject Gamemanager;
 
     GameObject Player;
  
@@ -30,46 +31,54 @@ public class bm : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {if (
-      Input.GetAxisRaw("sprint") > 0
-            ) 
+    {
+
+        if (Gamemanager.GetComponent<Gamemanager>().gameHasEnded == false)
         {
 
-            runspeed = 70f;
-        
-        
-        
-        }
-        if (
-          Input.GetAxisRaw("sprint") == 0
+
+            if (
+          Input.GetAxisRaw("sprint") > 0
                 )
-        {
+            {
 
-            runspeed = 40;
+                runspeed = 70f;
+            }
+            if (
+              Input.GetAxisRaw("sprint") == 0
+                    )
+            {
+
+                runspeed = 40;
 
 
+
+            }
+
+
+
+
+
+            horizontalmove = Input.GetAxisRaw("Horizontal") * runspeed;
+            if (Input.GetButtonDown("Jump"))
+
+            {
+
+                jump = true;
+
+
+            }
+            animator.SetFloat("Speed", Mathf.Abs(horizontalmove));
 
         }
-
-
-
-
-
-        horizontalmove = Input.GetAxisRaw("Horizontal")* runspeed;
-        if (Input.GetButtonDown("Jump")) 
-        
-        {
-
-            jump = true;
-       
-        
-        }
-        animator.SetFloat("Speed",Mathf.Abs(horizontalmove));
     }
     void FixedUpdate()
     {
-        controller.Move(horizontalmove * Time.fixedDeltaTime,false,jump);
-        jump = false;
+        if (Gamemanager.GetComponent<Gamemanager>().gameHasEnded == false)
+        {
+            controller.Move(horizontalmove * Time.fixedDeltaTime, false, jump);
+            jump = false;
+        }
     }
 
 
