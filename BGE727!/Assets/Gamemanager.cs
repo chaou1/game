@@ -7,7 +7,7 @@ public class Gamemanager : MonoBehaviour
 
 {
 
-    public GameObject gameover,restartbutton, menu;
+    public GameObject gameover, restartbutton, menu, Player;
    public bool gameHasEnded = false;
 
     void Start()
@@ -24,6 +24,8 @@ public class Gamemanager : MonoBehaviour
             menu.SetActive(true);
             gameover.SetActive(true);
             restartbutton.SetActive(true);
+            Player.GetComponent<bm>().runspeed = 0;
+            Player.GetComponent<bm>().horizontalmove = 0;
            
             
         }
