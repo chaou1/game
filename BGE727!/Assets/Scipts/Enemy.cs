@@ -33,10 +33,12 @@ public class Enemy : MonoBehaviour
         if (newpos.x < tempos.x)
         {
             isrunningright = true;
+            animator.SetBool("iswalkingright", true);
         }
         else
         {
             isrunningright = false;
+            animator.SetBool("iswalkingright", false);
         }
 
         { }
