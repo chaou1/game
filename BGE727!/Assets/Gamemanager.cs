@@ -8,7 +8,7 @@ public class Gamemanager : MonoBehaviour
 {
 
     public GameObject gameover,restartbutton, menu;
-    bool gameHasEnded = false;
+   public bool gameHasEnded = false;
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class Gamemanager : MonoBehaviour
             menu.SetActive(true);
             gameover.SetActive(true);
             restartbutton.SetActive(true);
-            Time.timeScale = 0;
+           
             
         }
     

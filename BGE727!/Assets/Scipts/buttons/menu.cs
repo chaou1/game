@@ -18,6 +18,6 @@ public class menu : MonoBehaviour
     public void mainmenu()
     {
         FindObjectOfType<Gamemanager>().MainMenu();
-        Time.timeScale = 1;
+        
     }
 }
